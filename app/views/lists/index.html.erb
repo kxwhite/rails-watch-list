@@ -1,0 +1,19 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.picsum.photos/id/111/4400/2656.jpg);">
+  <div class="container">
+    <h1> Movies </h1>
+  </div>
+</div>
+
+<div class="title">
+  <h2> My lists </h2>
+</div>
+
+<div class="cards">
+  <% @lists.each do |list| %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    <h3 class="list-name">
+      <%= link_to list.name, list_path(list), class: 'list-item' %>
+    </h3>
+  </div>
+  <% end %>
+</div>

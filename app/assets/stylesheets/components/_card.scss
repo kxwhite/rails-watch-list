@@ -1,0 +1,26 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  height: 200px;
+  margin: 20px 200px;
+}
+
+.card-category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  margin: 20px 200px;
+}
+
+// h3.list-name {
+//   font-size: 32px;
+// }
+
+a.list-item {
+  color: white;
+  text-decoration: none;
+}
