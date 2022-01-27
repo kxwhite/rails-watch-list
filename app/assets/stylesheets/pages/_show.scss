@@ -1,0 +1,24 @@
+a.btn.btn-success {
+  float: right;
+  margin: 50px 200px;
+}
+
+.container {
+  position: relative;
+}
+
+p.alert.alert-warning {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 90px;
+  right: 25px;
+  bottom: 750px;
+  // font-weight: bold;
+}
+
+.alert-warning {
+    color: #ffffff;
+    background-color: #FCBF49;
+    border-color: #FCBF49;
+}

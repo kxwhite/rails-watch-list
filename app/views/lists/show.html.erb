@@ -1,12 +1,37 @@
-
-
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+<div class="banner show-page" >
   <div class="container">
-    <%# <a class="btn btn-warning" href="#"><%= @movies.count %></a>
+    <%# <a class="btn btn-warning" href="#"> <%= @list.movies.count %> movies </a> %>
     <h1> <%= @list.name %> </h1>
   </div>
+      <p class="alert alert-warning"> <%= @list.movies.count %> movies </p>
 </div>
+
+<%= link_to 'Add a movie', new_list_bookmark_path(@list), class: 'btn btn-success'%>
 
 <%# Add list of movies %>
 
-<%= link_to 'Back', lists_path %>
+
+<div class="movie-card">
+  <% @list.movies.each do |movie| %>
+  <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+  <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" /> %>
+  <%= image_tag movie.poster_url, alt: "Movie Poster" %>
+  <div class="card-info">
+    <div>
+      <h2> <%= movie.title %> </h2>
+      <p> <%= movie.rating %> </p>
+      <i class="fas fa-star"></i>
+    </div>
+    <p> <%= movie.overview %> </p>
+    <div class="card-footer">
+      <h2 class="card-comment"><i class="fas fa-quote-left"></i><%= bookmark.comment %></h2>
+      <%= link_to 'Delete', list_bookmarks_path(movie), method: delete, data: { confirm: 'Are you sure?' } %>
+
+    </div>
+  </div>
+  <% end %>
+</div>
+
+
+
+<%# <%= link_to 'Back', lists_path %>
