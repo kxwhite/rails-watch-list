@@ -18,11 +18,17 @@ h2 {
   margin: 20px 200px;
 }
 
-// h3.list-name {
-//   font-size: 32px;
-// }
-
 a.list-item {
   color: white;
   text-decoration: none;
+}
+
+// Movie Card
+
+.movie-card {
+  margin-top: 120px !important;
+}
+
+.fa-star {
+  color: gold;
 }

@@ -1,22 +1,44 @@
-<div class="banner" >
+<div class="home-banner banner" >
 
   <%# <%= image_tag 'cinema.jpg'%>
 
   <div class="container">
-    <h1> Movies </h1>
+    <h1 class="my-3"> What's next on your movie list? </h1>
+    <p>
+      <span id="banner-typed-text" class="text-align-center"></span>
+    </p>
   </div>
 </div>
 
-<div class="title">
+<div class="title mx-1">
   <h2> My lists </h2>
 </div>
 
+
+
+
 <div class="cards">
   <% @lists.each do |list| %>
-  <div class="card-category">
-    <h3 class="list-name">
-      <%= link_to list.name, list_path(list), class: 'list-item' %>
-    </h3>
+  <div class=" card-category row mx-1">
+    <div class="list-name col-12">
+      <div class="rounded p-3 shadow">
+        <h3 class="list-name d-flex justify-content-center align-content-center">
+          <%= link_to list.name, list_path(list), class: 'list-item' %>
+        </h3>
+        <small class="d-flex text-right justify-content-end align-items-end"><%= link_to 'Delete', list_path(list), method: :delete, data: { confirm: 'Are you sure?' }, class: 'index-danger text-danger' %></small>
+      </div>
+    </div>
   </div>
   <% end %>
 </div>
+
+<%# <div class="cards"> %>
+  <%# <% @lists.each do |list| %>
+  <%# <div class="card-category"> %>
+    <%# <h3 class="list-name"> %>
+      <%# <%= link_to list.name, list_path(list), class: 'list-item' %>
+    <%# </h3> %>
+      <%# <small class="d-flex text-right align-items-end"><%= link_to 'Delete', list_path(list), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-danger' %></small>
+  <%# </div> %>
+  <%# <% end %>
+<%# </div> %>
