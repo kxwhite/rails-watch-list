@@ -2,13 +2,16 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-  height: 200px;
+  grid-auto-columns: 200px;
+  // height: 100%;
   margin: 20px 200px;
 }
 
 .card-category {
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(horror.jpg);
   background-size: cover;
+  height: 200px;
+  border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;

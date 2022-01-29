@@ -1,6 +1,7 @@
-<div class="show-page-banner banner" >
+<div class="show-page-banner banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+url(<%= @list.photo.attached? ? cl_image_path(@list.photo.key) : asset_path('show_background.jpg') %>)">
+
   <div class="container">
-    <%# <a class="btn btn-warning" href="#"> <%= @list.movies.count %> movies </a> %>
     <h1> <%= @list.name %> </h1>
   </div>
       <p class="alert alert-warning"> <%= @list.movies.count %> movies </p>
@@ -11,7 +12,7 @@
 <div class="movie-card row my-2 mt-5">
   <% @list.movies.each do |movie| %>
     <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
-    <div class="col-12 col-sm-6 col-md mb-4" data-aos="zoom-in">
+    <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
       <div class="bg-white rounded shadow h-100">
         <%= image_tag movie.poster_url, alt: movie.title, class: 'movie-img rounded-top img-fluid'%>
         <div class="card-info p-3 rounded-bottom d-flex flex-column">

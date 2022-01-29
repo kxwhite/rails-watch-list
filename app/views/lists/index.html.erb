@@ -1,7 +1,5 @@
-<div class="home-banner banner" >
-
+<div class="home-banner banner">
   <%# <%= image_tag 'cinema.jpg'%>
-
   <div class="container">
     <h1 class="my-3"> What's next on your movie list? </h1>
     <p>
@@ -14,12 +12,9 @@
   <h2> My lists </h2>
 </div>
 
-
-
-
 <div class="cards">
   <% @lists.each do |list| %>
-  <div class=" card-category row mx-1">
+  <div class="card-category row mx-1" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : asset_path('show_background.jpg') %>)">
     <div class="list-name col-12">
       <div class="rounded p-3 shadow">
         <h3 class="list-name d-flex justify-content-center align-content-center">
@@ -31,6 +26,9 @@
   </div>
   <% end %>
 </div>
+
+
+
 
 <%# <div class="cards"> %>
   <%# <% @lists.each do |list| %>
